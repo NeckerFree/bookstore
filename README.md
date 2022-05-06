@@ -12,9 +12,7 @@
 
 ## Live Demo (if available)
 
-[Netlify Deploy](https://neckerfree-bookstore.netlify.app)
-
-[Heroku Deploy](https://neckerfree-bookstore.herokuapp.com)
+[Live Demo]()
 
 ## Getting Started
 
