@@ -1,22 +1,22 @@
 // categories.js
 const categoriesCollection = [];
 // Actions
-const LOAD = 'LOAD';
-const CREATE = 'CREATE';
-const CHECK_STATUS = 'CHECK_STATUS';
-const REMOVE = 'REMOVE';
+const GET_CATEGORY = 'bookstore/categories/GET_CATEGORY';
+const CREATE_CATEGORY = 'bookstore/categories/CREATE_CATEGORY';
+const CHECK_STATUS = 'bookstore/categories/CHECK_STATUS';
+const REMOVE_CATEGORY = 'bookstore/categories/REMOVE_CATEGORY';
 
 // Reducer
 export default function categoriesReducer(state = categoriesCollection, action) {
   switch (action.type) {
-    case LOAD:
+    case GET_CATEGORY:
       return [...state];
-    case CREATE:
+    case CREATE_CATEGORY:
       return [...state, action.category];
     case CHECK_STATUS: {
       return 'Under construction';
     }
-    case REMOVE:
+    case REMOVE_CATEGORY:
       return state.filter((category) => category.id !== action.id);
     default:
       return state;
@@ -25,11 +25,11 @@ export default function categoriesReducer(state = categoriesCollection, action) 
 
 // Action Creators
 export function loadCategories() {
-  return { type: LOAD };
+  return { type: GET_CATEGORY };
 }
 
 export function createCategory(category) {
-  return { type: CREATE, category };
+  return { type: CREATE_CATEGORY, category };
 }
 
 export function checkStatusCategory(category) {
@@ -37,5 +37,5 @@ export function checkStatusCategory(category) {
 }
 
 export function removeCategory(id) {
-  return { type: REMOVE, id };
+  return { type: REMOVE_CATEGORY, id };
 }
