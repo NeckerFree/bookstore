@@ -14,7 +14,7 @@ export default function booksReducer(state = booksCollection, action) {
     case ADD_BOOK:
       return [...state, action.book];
     case UPDATE_BOOK: {
-      const existingBook = state.find((book) => book.id === action.id);
+      const existingBook = state.find((book) => book.id === action.book.id);
       if (existingBook) {
         existingBook.title = action.book.title;
         existingBook.author = action.book.author;
