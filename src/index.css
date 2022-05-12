@@ -119,9 +119,11 @@ a {
   display: flex;
   flex-direction: column;
 }
-.book p{
+
+.book p {
   width: 300px;
 }
+
 hr {
   max-width: 100%;
   margin: 50px 60px;
@@ -179,7 +181,7 @@ input[type="submit"] {
 
 .booksSection {
   margin-bottom: 40px;
-  }
+}
 
 .categoriesSection {
   margin: 30px;

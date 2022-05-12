@@ -1,7 +1,6 @@
-// import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
 import '../index.css';
-import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import FormComponent from './FormComponent';
 import { loadBooks } from '../redux/books/books';
@@ -16,7 +15,7 @@ const Books = () => {
     <section className="booksContainer">
       <section className="booksSection">
         {booksCollection.map((book) => (
-          <Book key={book.id} title={book.title} author={book.author} />
+          <Book id={book.id} key={book.id} title={book.title} author={book.author} />
         ))}
       </section>
       <hr />

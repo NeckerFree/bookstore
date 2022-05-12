@@ -1,34 +1,32 @@
-// books.js
-const booksCollection = [];
-booksCollection.push({ id: 1, title: 'DREAM TOWN', author: 'David Baldacci' });
-booksCollection.push({ id: 2, title: 'RUN, ROSE, RUN', author: 'Dolly Parton and James Patterson' });
-booksCollection.push({ id: 3, title: 'CITY ON FIRE', author: 'Don Winslow' });
-booksCollection.push({ id: 4, title: 'THE GOOD LEFT UNDONE', author: 'Adriana Trigiani' });
-booksCollection.push({ id: 5, title: 'SEA OF TRANQUILITY', author: 'Emily St. John Mandel' });
+import booksCollection from './booksCollection';
 
-// Actions
 const GET_BOOK = 'bookstore/books/GET_BOOK';
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const UPDATE_BOOK = 'bookstore/books/UPDATE_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
-// Reducer
 export default function booksReducer(state = booksCollection, action) {
   switch (action.type) {
     case GET_BOOK:
       return [...state];
-    case ADD_BOOK:
-      return [...state, action.book];
+    case ADD_BOOK: {
+      const { title, author } = action;
+      const book = { id: state.length + 1, title, author };
+      return [...state, book];
+    }
     case UPDATE_BOOK: {
-      const existingBook = state.find((book) => book.id === action.book.id);
+      const copyState = [...state];
+      const existingBook = copyState.find((b) => b.id === action.book.id);
       if (existingBook) {
         existingBook.title = action.book.title;
         existingBook.author = action.book.author;
       }
-      return [...state];
+      return copyState;
     }
-    case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.id);
+    case REMOVE_BOOK: {
+      const index = state.findIndex((book) => book.id === parseInt(action.id, 10));
+      return [...state.slice(0, index), ...state.slice(index + 1)];
+    }
     default:
       return state;
   }
@@ -39,8 +37,8 @@ export function loadBooks() {
   return { type: GET_BOOK };
 }
 
-export function createBook(book) {
-  return { type: ADD_BOOK, book };
+export function createBook(title, author) {
+  return { type: ADD_BOOK, title, author };
 }
 
 export function updateBook(book) {
