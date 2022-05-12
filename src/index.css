@@ -25,7 +25,7 @@ body {
 }
 
 .panel-bg {
-  height: 68.563rem;
+  height: 100%;
   border-radius: 4px;
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   background-color: #fafafa;
@@ -118,6 +118,10 @@ a {
 .book {
   display: flex;
   flex-direction: column;
+}
+
+.book p {
+  width: 300px;
 }
 
 hr {

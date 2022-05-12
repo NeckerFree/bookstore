@@ -1,16 +1,26 @@
-import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 import '../index.css';
 import Book from './Book';
 import FormComponent from './FormComponent';
+import { loadBooks } from '../redux/books/books';
 
-const Books = () => (
-  <section className="booksContainer">
-    <section className="booksSection">
-      <Book id="1" title="Book Title" author="Book Author" />
+const Books = () => {
+  const booksCollection = useSelector((state) => state.booksReducer);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadBooks());
+  }, []);
+  return (
+    <section className="booksContainer">
+      <section className="booksSection">
+        {booksCollection.map((book) => (
+          <Book id={book.id} key={book.id} title={book.title} author={book.author} />
+        ))}
+      </section>
+      <hr />
+      <FormComponent />
     </section>
-    <hr />
-    <FormComponent />
-  </section>
-);
-
+  );
+};
 export default Books;
