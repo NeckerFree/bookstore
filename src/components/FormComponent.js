@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../index.css';
 import { useDispatch } from 'react-redux';
-import { createBook } from '../redux/books/books';
+import { createBook } from '../redux/books/bookStore';
 
 const FormComponent = () => {
   const [title, setTitle] = useState('');
@@ -9,12 +9,12 @@ const FormComponent = () => {
   const dispatch = useDispatch();
   const handleAddBook = (event) => {
     event.preventDefault();
-    dispatch(createBook(title, author));
-    event.target.parentNode.reset();
+    dispatch(createBook(title, author, 'Not defined'));
+    event.target.reset();
   };
   return (
     <div className="formContent">
-      <form>
+      <form onSubmit={handleAddBook}>
         <p>ADD NEW BOOK</p>
         <input
           id="inputTitle"
@@ -32,11 +32,11 @@ const FormComponent = () => {
           maxLength="100"
           required
         />
-        {/* <select name="category" id="category">
-        <option value="category1">Category 1</option>
-        <option value="category2">Category 2</option>
-      </select> */}
-        <input id="submit" type="submit" onClick={handleAddBook} value="Add Book" />
+        <select name="category" id="category">
+          <option value="default">Default Category</option>
+          <option value="notDefined">Not Defined</option>
+        </select>
+        <input id="submit" type="submit" value="Add Book" />
       </form>
     </div>
   );
