@@ -118,7 +118,7 @@ a {
   margin: 0.188rem 0.938rem 0.125rem 0;
   letter-spacing: normal;
   color: var(--cool-blue);
-  font-size:15px;
+  font-size: 15px;
 }
 
 .book {
@@ -214,9 +214,10 @@ input[type="submit"] {
   text-align: center;
   font-size: 30px;
   margin: 10px 0;
-  color:#000;
+  color: #000;
   width: auto;
 }
+
 .completedText {
   font-size: 15px;
   opacity: 0.5;
