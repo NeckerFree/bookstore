@@ -3,19 +3,25 @@ import React, { useEffect } from 'react';
 import '../index.css';
 import Book from './Book';
 import FormComponent from './FormComponent';
-import { loadBooks } from '../redux/books/books';
+import { getAllBooks } from '../redux/books/bookStore';
 
 const Books = () => {
   const booksCollection = useSelector((state) => state.booksReducer);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(loadBooks());
+    dispatch(getAllBooks());
   }, []);
   return (
     <section className="booksContainer">
       <section className="booksSection">
         {booksCollection.map((book) => (
-          <Book id={book.id} key={book.id} title={book.title} author={book.author} />
+          <Book
+            id={book.itemId}
+            title={book.title}
+            author={book.author}
+            category={book.category}
+            key={book.title}
+          />
         ))}
       </section>
       <hr />
