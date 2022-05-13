@@ -24,7 +24,9 @@ const Book = (props) => {
         <p className="author">{author}</p>
         <ul className="listItems">
           <li><a href="#top" onClick={foo}>Comments</a></li>
+          <div className="vertical-divider" />
           <li><a href="#top" id={id} onClick={handleRemoveBook}>Remove</a></li>
+          <div className="vertical-divider" />
           <li><a href="#top" onClick={foo}>Edit</a></li>
         </ul>
       </div>
@@ -39,6 +41,7 @@ const Book = (props) => {
           </div>
         </div>
       </div>
+      <div className="progress-divider" />
       <div>
         <p className="curent-chapter">Current chapter</p>
         <p className="chapter">Chapter 10</p>

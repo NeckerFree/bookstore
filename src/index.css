@@ -33,7 +33,8 @@ body {
 
 h1 {
   color: var(--azure);
-  width: 200px;
+  width: 300px;
+  font-size: xx-large;
 }
 
 .navHeader {
@@ -55,13 +56,22 @@ h1 {
   margin-left: 40px;
 }
 
-.iconClass {
-  width: 50px;
-  margin-right: 20px;
+.nav-link {
+  color: var(--black-two);
+}
+
+.active {
+  opacity: 0.5;
+  color: var(--black-two);
 }
 
 a {
   text-decoration: none;
+}
+
+.iconClass {
+  width: 50px;
+  margin-right: 20px;
 }
 
 .gender {
@@ -144,6 +154,13 @@ form {
   margin-right: auto;
 }
 
+.form-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
 .inputRow {
   display: flex;
   justify-content: space-between;
@@ -175,6 +192,7 @@ input[type="submit"] {
   border-radius: 3px;
   background-color: var(--azure);
   color: var(--white);
+  border: none;
 }
 
 .booksContainer {
@@ -207,7 +225,12 @@ input[type="submit"] {
 }
 
 .progressContainer {
-  width: 80px;
+  width: 5.625rem;
+  height: 5.625rem;
+  padding: 0.63rem 0.625rem 0.75rem 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .value {
@@ -224,9 +247,24 @@ input[type="submit"] {
 }
 
 .curent-chapter {
+  margin-top: 0;
   height: 1.125rem;
   line-height: normal;
   letter-spacing: normal;
   color: var(--black-two);
   opacity: 0.5;
+}
+
+.progress-divider {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 1.5rem 3.688rem 0 4.938rem;
+  background-color: #e8e8e8;
+}
+
+.vertical-divider {
+  width: 0.125rem;
+  height: 1.5rem;
+  background-color: #e8e8e8;
+  margin: 0 1rem;
 }
