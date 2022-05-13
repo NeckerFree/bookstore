@@ -15,7 +15,7 @@ const FormComponent = () => {
   return (
     <div className="formContent">
       <form onSubmit={handleAddBook}>
-        <p>ADD NEW BOOK</p>
+        <p className="form-title">ADD NEW BOOK</p>
         <input
           id="inputTitle"
           type="text"
