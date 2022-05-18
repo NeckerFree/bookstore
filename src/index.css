@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+* {
+  --bubble-gum-pink: #ff5ab7;
+  --black: #000;
+  --black-two: #121212;
+  --grey-border: #e8e8e8;
+  --cool-blue: #4386bf;
+  --pinkish-grey: #c7c7c7;
+  --pale-grey: #f5f6fa;
+  --warm-grey: #888;
+  --white: #fff;
+  --azure: #0290ff;
+  --very-light-pink: #c4c4c4;
+  --medium-blue: #307bbe;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.Bookstore-CMS {
+  padding: 9.313rem 3.75rem 7.688rem 6.25rem;
+  background-color: var(--pale-grey);
+}
+
+.panel-bg {
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
+}
+
+h1 {
+  color: var(--azure);
+  width: 300px;
+  font-size: xx-large;
+}
+
+.navHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+}
+
+.menu {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  list-style: none;
+  width: 80%;
+}
+
+.menu li {
+  margin-left: 40px;
+}
+
+.nav-link {
+  color: var(--black-two);
+}
+
+.active {
+  opacity: 0.5;
+  color: var(--black-two);
+}
+
+a {
+  text-decoration: none;
+}
+
+.iconClass {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.gender {
+  width: auto;
+  height: 1.125rem;
+  margin: 0 2.438rem 0 0;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+  opacity: 0.5;
+}
+
+.title {
+  width: auto;
+  height: 1.813rem;
+  margin: 3px 10px 0 0;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: var(--black-two);
+  font-size: large;
+  font-weight: bold;
+}
+
+.author {
+  width: auto;
+  height: 1.188rem;
+  margin: 0.25rem 0 0;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--cool-blue);
+  font-size: medium;
+}
+
+.bookContainer {
+  margin: 2.313rem 6.25rem 0;
+  padding: 32px 100px 32px 28px;
+  border-radius: 4px;
+  border: solid 1px var(--grey-border);
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.listItems {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.listItems li a {
+  width: 4.563rem;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  letter-spacing: normal;
+  color: var(--cool-blue);
+  font-size: 15px;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  max-width: 100%;
+  margin: 2.313rem 6.25rem;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.313rem 6.25rem 0;
+  padding: 20px 20px;
+}
+
+form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+input[type="text"] {
+  width: 250px;
+  height: 20px;
+  margin: 10px 20px 0 0;
+  padding: 5px;
+  border-radius: 4px;
+  border: solid 1px var(--grey-border);
+  background-color: var(--white);
+}
+
+select {
+  height: 34px;
+  width: auto;
+  margin: 10px 20px 0 0;
+  padding: 0.375rem 0.938rem 0.563rem 1rem;
+  border-radius: 4px;
+  border: solid 1px var(--grey-border);
+  background-color: var(--white);
+}
+
+input[type="submit"] {
+  padding: 6px 10px;
+  border-radius: 3px;
+  background-color: var(--azure);
+  color: var(--white);
+  border: none;
+}
+
+.booksContainer {
+  margin-bottom: 10px;
+}
+
+.booksSection {
+  margin-bottom: 40px;
+}
+
+.categoriesSection {
+  margin: 30px;
+}
+
+.progress {
+  position: absolute;
+  border-radius: 50%;
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 5px solid #307bbe;
+  border-left-color: #e8e8e8;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.completed {
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressContainer {
+  width: 5.625rem;
+  height: 5.625rem;
+  padding: 0.63rem 0.625rem 0.75rem 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.value {
+  text-align: center;
+  font-size: 30px;
+  margin: 10px 0;
+  color: #000;
+  width: auto;
+}
+
+.completedText {
+  font-size: 15px;
+  opacity: 0.5;
+}
+
+.curent-chapter {
+  margin-top: 0;
+  height: 1.125rem;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+  opacity: 0.5;
+}
+
+.progress-divider {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 1.5rem 3.688rem 0 4.938rem;
+  background-color: #e8e8e8;
+}
+
+.vertical-divider {
+  width: 0.125rem;
+  height: 1.5rem;
+  background-color: #e8e8e8;
+  margin: 0 1rem;
+}
